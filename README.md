@@ -1,6 +1,7 @@
-# instrumented-feeding-nipple
-#Zoe Chen
-#Dec 10, 2023
+Instrumented-Feeding-Nipple
+by Zoe Chen
+
+Status as of Dec 10, 2023 
 
 Summary:
 Weaker biting forces correlate to diseased calves, especially those under six months suffering from diarrhea. The planned final product is a sensor that fits within current calf feeding systems to record the bite force of calves during the suckling process –  in hopes of providing another illness indicator that is safer and more convenient for caregivers. The product must be rugged enough to withstand variations in temperature, exposure to liquids, and over fourteen thousand bites over its lifetime – all while maintaining a soft exterior that is comfortable for the calves to chew on. 
