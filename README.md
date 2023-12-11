@@ -1,14 +1,28 @@
 # Instrumented Feeding Nipple
-by Zoe Chen
+Below details how to calibrate and get voltage estimations from the constructed sensors.
 
-Status as of Dec 10, 2023 
 
-Summary:
-Weaker biting forces correlate to diseased calves, especially those under six months suffering from diarrhea. The planned final product is a sensor that fits within current calf feeding systems to record the bite force of calves during the suckling process –  in hopes of providing another illness indicator that is safer and more convenient for caregivers. The product must be rugged enough to withstand variations in temperature, exposure to liquids, and over fourteen thousand bites over its lifetime – all while maintaining a soft exterior that is comfortable for the calves to chew on. 
+## Calibration 
 
-The current iteration of the sensor is modeled after the feeding nipples attached to portable calf milk feeding bottles. Two force resistive sensors (FSRs) are encapsulated within two silicon layers and wired to a Wheatstone bridge. The output voltage is converted to a force via a calibration function in the form of an exponential growth function. All voltage-to-force translations are done on an Arduino Nano 33 IOT in real-time. The total cost of the sensor is $20.36, excluding the cost of the microcontroller.  
+### Step 1: Upload the Arduino & start the ATI NET F/T sensor
+Upload the `FeedingNippleArduino.ino` to your Arduino. Calibrate the upper and lower bounds of the analogRead and its corresponding voltages to ensure accurate readings. Be sure the readings are printing properly on the serial monitor. Ensure the serial monitor is closed throughout the duration of data collection.
 
-We have validated that the design’s calibration function adequately fits the industry standard. Comparisons between the developed sensor and the ground truth force have shown that the sensor accurately and precisely measures the true force up to 50N, with an error of ±3.09N. 
+### Step 2: Start ATI NET F/T sensor
+Turn on the ATI NET F/T sensor. Open your terminal. Don't forget to run `source devel/setup.bash` everytime you open a new terminal in the root of your workspace to source it.
 
-Preliminary field testing found that healthy bites (N=160) had an average force of 14.97N with a standard deviation of 4.30N, while weak bites (N=221) had an average force of 4.55N with a standard deviation of 2.35N. 
+### Step 3: Begin collecting data
+Run the bash script `REPLACE REPLACE REPLACE` to begin collecting data from the ATI NET F/T sensor.
+
+### Step 4: Convert Rosbag into CSV file
+Place the `extract_forque.py` script in the same folder as your rosbag files. Run the `extract_forque.py` script. This converts the rosbag into a CSV in its own individual folder.
+
+### Step 4: Combine the Force and Voltage Readings using CurveFit.py
+Run this script with two CSVs files as the input - the voltage readings from the Arduino and the rosbag force readings. This script will combine the two csv files and calculate a calibration function in the form y = ae^(bx).
+
+
+## Post-Calibration 
+After finding the calibration function, input the a and b parameters into `TranslateV2F.py`. Whenever performing future tests or in field tests, have `FeedingNippleArduino.ino` running on the Arduino before running `TranslateV2F.py`.
+
+
+
 
