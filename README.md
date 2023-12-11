@@ -1,6 +1,7 @@
 # Instrumented Feeding Nipple
-Below details how to calibrate and get voltage estimations from the constructed sensors.
 
+## CAD Files
+All CAD files were printed using 5% rectilinear infill and no supports.
 
 ## Calibration 
 
