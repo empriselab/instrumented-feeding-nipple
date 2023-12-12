@@ -1,0 +1,174 @@
+[35m[1mScanning dependencies of target _netft_rdt_driver_generate_messages_check_deps_String_cmd[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp[0m
+[  0%] Built target std_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_eus[0m
+[  0%] Built target _netft_rdt_driver_generate_messages_check_deps_String_cmd
+[35m[1mScanning dependencies of target std_msgs_generate_messages_nodejs[0m
+[  0%] Built target geometry_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_cpp[0m
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target tf2_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target diagnostic_msgs_generate_messages_eus[0m
+[  0%] Built target diagnostic_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target std_msgs_generate_messages_py[0m
+[  0%] Built target std_msgs_generate_messages_py
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_nodejs[0m
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_cpp[0m
+[  0%] Built target actionlib_msgs_generate_messages_py
+[  0%] Built target actionlib_generate_messages_cpp
+[35m[1mScanning dependencies of target tf_generate_messages_eus[0m
+[  0%] Built target tf_generate_messages_eus
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_lisp[0m
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target roscpp_generate_messages_lisp[0m
+[  0%] Built target actionlib_msgs_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_lisp
+[35m[1mScanning dependencies of target _catkin_empty_exported_target[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_lisp[0m
+[  0%] Built target _catkin_empty_exported_target
+[  0%] Built target actionlib_generate_messages_lisp
+[35m[1mScanning dependencies of target diagnostic_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target diagnostic_msgs_generate_messages_cpp[0m
+[  0%] Built target diagnostic_msgs_generate_messages_nodejs
+[  0%] Built target diagnostic_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target roscpp_generate_messages_py[0m
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target roscpp_generate_messages_py
+[35m[1mScanning dependencies of target roscpp_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target roscpp_generate_messages_eus[0m
+[  0%] Built target roscpp_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_cpp
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_lisp[0m
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target tf2_msgs_generate_messages_py
+[35m[1mScanning dependencies of target tf_generate_messages_cpp[0m
+[  0%] Built target tf_generate_messages_cpp
+[35m[1mScanning dependencies of target roscpp_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_eus[0m
+[  0%] Built target roscpp_generate_messages_nodejs
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_nodejs[0m
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[35m[1mScanning dependencies of target geometry_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_eus[0m
+[  0%] Built target geometry_msgs_generate_messages_py
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_py[0m
+[  0%] Built target tf2_msgs_generate_messages_eus
+[  0%] Built target sensor_msgs_generate_messages_py
+[35m[1mScanning dependencies of target tf_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target tf_generate_messages_nodejs[0m
+[  0%] Built target tf_generate_messages_lisp
+[  0%] Built target tf_generate_messages_nodejs
+[35m[1mScanning dependencies of target diagnostic_msgs_generate_messages_py[0m
+[  0%] Built target diagnostic_msgs_generate_messages_py
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target sensor_msgs_generate_messages_nodejs[0m
+[  0%] Built target sensor_msgs_generate_messages_cpp
+[  0%] Built target sensor_msgs_generate_messages_lisp
+[  0%] Built target sensor_msgs_generate_messages_eus
+[  0%] Built target sensor_msgs_generate_messages_nodejs
+[35m[1mScanning dependencies of target rosgraph_msgs_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_eus[0m
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_cpp[0m
+[  0%] Built target actionlib_generate_messages_eus
+[  0%] Built target actionlib_msgs_generate_messages_cpp
+[35m[1mScanning dependencies of target actionlib_generate_messages_nodejs[0m
+[  0%] Built target actionlib_generate_messages_nodejs
+[35m[1mScanning dependencies of target diagnostic_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target actionlib_generate_messages_py[0m
+[  0%] Built target diagnostic_msgs_generate_messages_lisp
+[35m[1mScanning dependencies of target tf_generate_messages_py[0m
+[  0%] Built target actionlib_generate_messages_py
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_eus[0m
+[  0%] Built target tf_generate_messages_py
+[  0%] Built target actionlib_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_eus
+[35m[1mScanning dependencies of target actionlib_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target tf2_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target netft_rdt_driver_generate_messages_py[0m
+[35m[1mScanning dependencies of target netft_rdt_driver_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target netft_rdt_driver_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target netft_rdt_driver_generate_messages_eus[0m
+[  0%] Built target actionlib_msgs_generate_messages_nodejs
+[  7%] [34m[1mGenerating Javascript code from netft_rdt_driver/String_cmd.srv[0m
+[ 23%] Built target tf2_msgs_generate_messages_nodejs
+[ 23%] Built target tf2_msgs_generate_messages_lisp
+[ 23%] [34m[1mGenerating Python code from SRV netft_rdt_driver/String_cmd[0m
+[ 23%] [34m[1mGenerating C++ code from netft_rdt_driver/String_cmd.srv[0m
+[ 23%] Built target std_msgs_generate_messages_lisp
+[ 30%] [34m[1mGenerating EusLisp code from netft_rdt_driver/String_cmd.srv[0m
+[ 38%] [34m[1mGenerating EusLisp manifest code for netft_rdt_driver[0m
+[35m[1mScanning dependencies of target netft_rdt_driver_generate_messages_lisp[0m
+[ 46%] [34m[1mGenerating Lisp code from netft_rdt_driver/String_cmd.srv[0m
+[ 46%] Built target netft_rdt_driver_generate_messages_nodejs
+[ 46%] Built target netft_rdt_driver_generate_messages_lisp
+[ 53%] [34m[1mGenerating Python srv __init__.py for netft_rdt_driver[0m
+[ 53%] Built target netft_rdt_driver_generate_messages_cpp
+[35m[1mScanning dependencies of target netft_rdt_driver_gencpp[0m
+[ 53%] Built target netft_rdt_driver_gencpp
+[35m[1mScanning dependencies of target netft_rdt_driver[0m
+[ 69%] [32mBuilding CXX object CMakeFiles/netft_rdt_driver.dir/src/netft_rdt_driver.cpp.o[0m
+[ 69%] [32mBuilding CXX object CMakeFiles/netft_rdt_driver.dir/src/ft_listener.cpp.o[0m
+[ 76%] [32mBuilding CXX object CMakeFiles/netft_rdt_driver.dir/src/netft_rdt_bias.cpp.o[0m
+[ 76%] Built target netft_rdt_driver_generate_messages_py
+[ 76%] Built target netft_rdt_driver_generate_messages_eus
+[35m[1mScanning dependencies of target netft_rdt_driver_generate_messages[0m
+[ 76%] Built target netft_rdt_driver_generate_messages
+In file included from [01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_rdt_bias.cpp:1[m[K:
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/include/netft_rdt_driver/netft_rdt_bias.h:[m[K In constructor ‘[01m[Knetft_rdt_driver::NetFTRDTDriverBias::NetFTRDTDriverBias(ros::NodeHandle&, double, const tf::Vector3&, double, std::size_t)[m[K’:
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/include/netft_rdt_driver/netft_rdt_bias.h:57:27:[m[K [01;35m[Kwarning: [m[K‘[01m[Knetft_rdt_driver::NetFTRDTDriverBias::num_points[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+   57 |     std::size_t           [01;35m[Knum_points[m[K;
+      |                           [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/include/netft_rdt_driver/netft_rdt_bias.h:52:27:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Ktf::Vector3 netft_rdt_driver::NetFTRDTDriverBias::scale_F[m[K’ [[01;35m[K-Wreorder[m[K]
+   52 |     tf::Vector3           [01;35m[Kscale_F[m[K;
+      |                           [01;35m[K^~~~~~~[m[K
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_rdt_bias.cpp:6:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+    6 | [01;35m[KNetFTRDTDriverBias[m[K::NetFTRDTDriverBias(ros::NodeHandle& nh, double rot,
+      | [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_rdt_bias.cpp:1[m[K:
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/include/netft_rdt_driver/netft_rdt_bias.h:52:27:[m[K [01;35m[Kwarning: [m[K‘[01m[Knetft_rdt_driver::NetFTRDTDriverBias::scale_F[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+   52 |     tf::Vector3           [01;35m[Kscale_F[m[K;
+      |                           [01;35m[K^~~~~~~[m[K
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/include/netft_rdt_driver/netft_rdt_bias.h:45:29:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kdouble netft_rdt_driver::NetFTRDTDriverBias::alpha[m[K’ [[01;35m[K-Wreorder[m[K]
+   45 |     double                  [01;35m[Kalpha[m[K;
+      |                             [01;35m[K^~~~~[m[K
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_rdt_bias.cpp:6:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+    6 | [01;35m[KNetFTRDTDriverBias[m[K::NetFTRDTDriverBias(ros::NodeHandle& nh, double rot,
+      | [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
+[ 84%] [32m[1mLinking CXX shared library /home/emprise/feeding_nipple/devel/.private/netft_rdt_driver/lib/libnetft_rdt_driver.so[0m
+[ 84%] Built target netft_rdt_driver
+[35m[1mScanning dependencies of target netft_node[0m
+[ 92%] [32mBuilding CXX object CMakeFiles/netft_node.dir/src/netft_node.cpp.o[0m
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_node.cpp:82:4:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\i'
+   82 |    [01;35m[K"alpha of exponential smoother, alpha \in [0,1]"[m[K )
+      |    [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_node.cpp:118:8:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+  118 |   std::[01;35m[Kauto_ptr[m[K<netft_rdt_driver::NetFTRDTDriver> netft(new
+      |        [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/9/bits/locale_conv.h:41[m[K,
+                 from [01m[K/usr/include/c++/9/locale:43[m[K,
+                 from [01m[K/usr/include/c++/9/iomanip:43[m[K,
+                 from [01m[K/usr/include/boost/math/policies/error_handling.hpp:12[m[K,
+                 from [01m[K/usr/include/boost/math/special_functions/round.hpp:14[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:38[m[K,
+                 from [01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_node.cpp:40[m[K:
+[01m[K/usr/include/c++/9/bits/unique_ptr.h:53:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   53 |   template<typename> class [01;36m[Kauto_ptr[m[K;
+      |                            [01;36m[K^~~~~~~~[m[K
+[100%] [32m[1mLinking CXX executable /home/emprise/feeding_nipple/devel/.private/netft_rdt_driver/lib/netft_rdt_driver/netft_node[0m
+[100%] Built target netft_node

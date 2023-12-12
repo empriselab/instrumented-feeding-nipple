@@ -1,0 +1,32 @@
+[35m[1mScanning dependencies of target tams_wireless_ft[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/tams_wireless_ft.dir/src/wireless_ft.cpp.o[0m
+[01m[K/home/emprise/feeding_nipple/src/tams_wireless_ft/src/wireless_ft.cpp:[m[K In member function ‘[01m[Kint WirelessFT::udpStartStreaming()[m[K’:
+[01m[K/home/emprise/feeding_nipple/src/tams_wireless_ft/src/wireless_ft.cpp:725:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+  725 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+[01m[K/home/emprise/feeding_nipple/src/tams_wireless_ft/src/wireless_ft.cpp:[m[K In member function ‘[01m[Kint WirelessFT::udpStopStreaming()[m[K’:
+[01m[K/home/emprise/feeding_nipple/src/tams_wireless_ft/src/wireless_ft.cpp:749:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+  749 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+[01m[K/home/emprise/feeding_nipple/src/tams_wireless_ft/src/wireless_ft.cpp:[m[K In member function ‘[01m[Kint WirelessFT::udpPing()[m[K’:
+[01m[K/home/emprise/feeding_nipple/src/tams_wireless_ft/src/wireless_ft.cpp:773:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+  773 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+[01m[K/home/emprise/feeding_nipple/src/tams_wireless_ft/src/wireless_ft.cpp:[m[K In member function ‘[01m[Kint WirelessFT::udpResetTelnetSocket()[m[K’:
+[01m[K/home/emprise/feeding_nipple/src/tams_wireless_ft/src/wireless_ft.cpp:797:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+  797 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+[01m[K/home/emprise/feeding_nipple/src/tams_wireless_ft/src/wireless_ft.cpp:[m[K In member function ‘[01m[Kint WirelessFT::decodeDataPacket(char*, unsigned int)[m[K’:
+[01m[K/home/emprise/feeding_nipple/src/tams_wireless_ft/src/wireless_ft.cpp:970:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+  970 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+[01m[K/home/emprise/feeding_nipple/src/tams_wireless_ft/src/wireless_ft.cpp:[m[K In member function ‘[01m[Kbool WirelessFT::serviceCallback(std_srvs::Empty::Request&, std_srvs::Empty::Response&)[m[K’:
+[01m[K/home/emprise/feeding_nipple/src/tams_wireless_ft/src/wireless_ft.cpp:1005:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+ 1005 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+[01m[K/home/emprise/feeding_nipple/src/tams_wireless_ft/src/wireless_ft.cpp:[m[K In member function ‘[01m[Kint WirelessFT::telnetDisconnect()[m[K’:
+[01m[K/home/emprise/feeding_nipple/src/tams_wireless_ft/src/wireless_ft.cpp:531:1:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K-Wreturn-type[m[K]
+  531 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+[100%] [32m[1mLinking CXX executable /home/emprise/feeding_nipple/devel/.private/tams_wireless_ft/lib/tams_wireless_ft/tams_wireless_ft[0m
+[100%] Built target tams_wireless_ft

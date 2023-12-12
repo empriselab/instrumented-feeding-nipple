@@ -1,0 +1,39 @@
+In file included from [01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_rdt_bias.cpp:1[m[K:
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/include/netft_rdt_driver/netft_rdt_bias.h:[m[K In constructor ‘[01m[Knetft_rdt_driver::NetFTRDTDriverBias::NetFTRDTDriverBias(ros::NodeHandle&, double, const tf::Vector3&, double, std::size_t)[m[K’:
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/include/netft_rdt_driver/netft_rdt_bias.h:57:27:[m[K [01;35m[Kwarning: [m[K‘[01m[Knetft_rdt_driver::NetFTRDTDriverBias::num_points[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+   57 |     std::size_t           [01;35m[Knum_points[m[K;
+      |                           [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/include/netft_rdt_driver/netft_rdt_bias.h:52:27:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Ktf::Vector3 netft_rdt_driver::NetFTRDTDriverBias::scale_F[m[K’ [[01;35m[K-Wreorder[m[K]
+   52 |     tf::Vector3           [01;35m[Kscale_F[m[K;
+      |                           [01;35m[K^~~~~~~[m[K
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_rdt_bias.cpp:6:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+    6 | [01;35m[KNetFTRDTDriverBias[m[K::NetFTRDTDriverBias(ros::NodeHandle& nh, double rot,
+      | [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_rdt_bias.cpp:1[m[K:
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/include/netft_rdt_driver/netft_rdt_bias.h:52:27:[m[K [01;35m[Kwarning: [m[K‘[01m[Knetft_rdt_driver::NetFTRDTDriverBias::scale_F[m[K’ will be initialized after [[01;35m[K-Wreorder[m[K]
+   52 |     tf::Vector3           [01;35m[Kscale_F[m[K;
+      |                           [01;35m[K^~~~~~~[m[K
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/include/netft_rdt_driver/netft_rdt_bias.h:45:29:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kdouble netft_rdt_driver::NetFTRDTDriverBias::alpha[m[K’ [[01;35m[K-Wreorder[m[K]
+   45 |     double                  [01;35m[Kalpha[m[K;
+      |                             [01;35m[K^~~~~[m[K
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_rdt_bias.cpp:6:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+    6 | [01;35m[KNetFTRDTDriverBias[m[K::NetFTRDTDriverBias(ros::NodeHandle& nh, double rot,
+      | [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_node.cpp:82:4:[m[K [01;35m[Kwarning: [m[Kunknown escape sequence: '\i'
+   82 |    [01;35m[K"alpha of exponential smoother, alpha \in [0,1]"[m[K )
+      |    [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_node.cpp:118:8:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+  118 |   std::[01;35m[Kauto_ptr[m[K<netft_rdt_driver::NetFTRDTDriver> netft(new
+      |        [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/9/bits/locale_conv.h:41[m[K,
+                 from [01m[K/usr/include/c++/9/locale:43[m[K,
+                 from [01m[K/usr/include/c++/9/iomanip:43[m[K,
+                 from [01m[K/usr/include/boost/math/policies/error_handling.hpp:12[m[K,
+                 from [01m[K/usr/include/boost/math/special_functions/round.hpp:14[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/time.h:58[m[K,
+                 from [01m[K/opt/ros/noetic/include/ros/ros.h:38[m[K,
+                 from [01m[K/home/emprise/feeding_nipple/src/net-ft-ros/src/netft_node.cpp:40[m[K:
+[01m[K/usr/include/c++/9/bits/unique_ptr.h:53:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   53 |   template<typename> class [01;36m[Kauto_ptr[m[K;
+      |                            [01;36m[K^~~~~~~~[m[K
