@@ -1,0 +1,11 @@
+source devel/setup.bash
+# initialize the core
+roscore
+# launch sensor topic
+roslaunch netft_rdt_driver ft_sensor.launch ip_address:=192.168.1.6 bias:=True rate:=1000
+# realtime monitor
+rostopic echo /ft_sensor/netft_data
+
+rosservice call /ft_sensor/bias_cmd "cmd: 'bias'"
+
+rosbag record -o NAME --duration TIME /ft_sensor/netft_data
