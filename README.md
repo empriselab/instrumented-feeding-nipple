@@ -22,7 +22,7 @@ Calibrate the F/T sensor by holding it in the air and typing the command `rosser
 
 
 ### Step 3: Begin collecting data
-Run the bash script `callibration.sh` to begin collecting data from the ATI NET F/T sensor.
+Run the bash script `callibration.sh` in the feeding_nipple_ws to begin collecting data from the ATI NET F/T sensor.
 
 ### Step 4: Convert Rosbag into CSV file
 Place the `extract_forque.py` script in the same folder as your rosbag files. Run the `extract_forque.py` script. This converts the rosbag into a CSV in its own individual folder.
