@@ -1,10 +1,10 @@
 # Instrumented Feeding Nipple
 
 ## CAD Files
-All CAD files were printed using 5% rectilinear infill and no supports.
+All CAD files were printed using 5% rectilinear infill and no supports. A tutorial on how to construct the nipple can be found here: https://www.youtube.com/watch?v=TO4Haf6ZgnU
 
 ## Calibration 
-The following must be run within the `feeding_nipple_ws` file.
+The following must be run within `feeding_nipple_ws` which is the workspace to run the ATI Net F/T sensor.
 
 ### Step 1: Upload the Arduino code
 Upload the `FeedingNippleArduino.ino` to your Arduino. Calibrate the upper and lower bounds of the analogRead and its corresponding voltages to ensure accurate readings. Be sure the readings are printing properly on the serial monitor. Ensure the serial monitor is closed throughout the duration of data collection.
