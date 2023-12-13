@@ -27,7 +27,7 @@ Run the bash script `callibration.sh` in the feeding_nipple_ws to begin collecti
 ### Step 4: Convert Rosbag into CSV file
 Place the `extract_forque.py` script in the same folder as your rosbag files. Run the `extract_forque.py` script. This converts the rosbag into a CSV in its own individual folder.
 
-### Step 4: Combine the Force and Voltage Readings using CurveFit.py
+### Step 5: Combine the Force and Voltage Readings using CurveFit.py
 Run this script with two CSVs files as the input - the voltage readings from the Arduino and the rosbag force readings. This script will combine the two csv files and calculate a calibration function in the form y = ae^(bx).
 
 
