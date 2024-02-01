@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(netft_rdt_driver)
 
 
-find_package(catkin REQUIRED COMPONENTS genmsg roscpp diagnostic_updater std_msgs geometry_msgs message_generation tf)
+find_package(catkin REQUIRED COMPONENTS genmsg roscpp rospy diagnostic_updater std_msgs geometry_msgs message_generation tf)
 find_package(Boost)
 
 
@@ -15,7 +15,7 @@ generate_messages(DEPENDENCIES std_msgs)
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS roscpp geometry_msgs diagnostic_updater diagnostic_msgs message_runtime tf
+  CATKIN_DEPENDS roscpp rospy geometry_msgs diagnostic_updater diagnostic_msgs message_runtime tf
 #  DEPENDS system_lib
 )
 
@@ -49,4 +49,8 @@ add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_genc
 
 add_executable(netft_node ${SRC_DIR}/netft_node.cpp      )
 target_link_libraries(netft_node ${PROJECT_NAME} boost_program_options)
+
+catkin_install_python(PROGRAMS scripts/ft_visualizer.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
