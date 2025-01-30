@@ -5,7 +5,7 @@ const int s1Pin = 3;            // MUX control pin S1
 const int s2Pin = 4;            // MUX control pin S2
 
 // Number of MUX channels
-const int numChannels = 2;
+const int numChannels = 8;
 
 // FSR readings array
 int fsrReadings[numChannels];
@@ -30,14 +30,14 @@ void loop() {
   for (int channel = 0; channel < numChannels; channel++) {
     selectMuxChannel(channel);                // Select MUX channel
     fsrReadings[channel] = analogRead(muxSigPin); // Read the FSR value
-    delay(10);                               // Small delay for stability
   }
 
   // Print FSR readings
   for (int i = 0; i < numChannels; i++) {
-    Serial.println(fsrReadings[i]);
+    Serial.print(fsrReadings[i]);
     Serial.print(" ");
   }
+  Serial.println();
 }
 
 // Function to select MUX channel
