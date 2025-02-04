@@ -45,7 +45,7 @@ def write_data(ser, csv_filename, num_channels=8):
             ser.close()
 
 if __name__ == "__main__":
-    serial_port = '/dev/cu.usbmodem141301'  # Change as needed
+    serial_port = '/dev/cu.usbmodem142101'  # Change as needed
     baud_rate = 9600  # Match with Arduino
     csv_filename = 'FSR_Test_Data.csv'  # Change for each test run
 
