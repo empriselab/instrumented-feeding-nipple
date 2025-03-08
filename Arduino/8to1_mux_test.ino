@@ -1,8 +1,8 @@
 // Pin Definitions
 const int muxSigPin = A0;       // Signal pin connected to the MUX output
-const int s0Pin = 2;            // MUX control pin S0
-const int s1Pin = 3;            // MUX control pin S1
-const int s2Pin = 4;            // MUX control pin S2
+const int s0Pin = 4;            // MUX control pin A
+const int s1Pin = 3;            // MUX control pin B
+const int s2Pin = 2;            // MUX control pin C
 
 // Number of MUX channels
 const int numChannels = 8;
@@ -26,6 +26,8 @@ void setup() {
 }
 
 void loop() {
+  unsigned long timestamp = micros();
+
   // Read all 8 channels
   for (int channel = 0; channel < numChannels; channel++) {
     selectMuxChannel(channel);                // Select MUX channel
@@ -35,9 +37,11 @@ void loop() {
   // Print FSR readings
   for (int i = 0; i < numChannels; i++) {
     Serial.print(fsrReadings[i]);
-    Serial.print(" ");
+    Serial.print(' ');
   }
   Serial.println();
+
+  delay(200);
 }
 
 // Function to select MUX channel
