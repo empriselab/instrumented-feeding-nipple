@@ -7,7 +7,7 @@
 // MIT License - please keep attribution and consider buying parts from Adafruit
 
 // which analog pin to connect
-#define THERMISTORPIN A1  
+#define THERMISTORPIN A7  
 // resistance at 25 degrees C
 #define THERMISTORNOMINAL 10000      
 // temp. for nominal resistance (almost always 25 C)
@@ -31,7 +31,7 @@ void loop(void) {
   uint8_t i;
   float average;
 
-  // take N samples in a row, with a slight delay
+  // take N samples in a row, with a slight delay for readings to stabilize
   for (i=0; i< NUMSAMPLES; i++) {
    samples[i] = analogRead(THERMISTORPIN);
    delay(10);
@@ -44,14 +44,14 @@ void loop(void) {
   }
   average /= NUMSAMPLES;
 
-  Serial.print("Average analog reading "); 
-  Serial.println(average);
+  // Serial.print("Average analog reading "); 
+  // Serial.println(average);
   
   // convert the value to resistance
   average = 1023 / average - 1;
   average = SERIESRESISTOR / average;
-  Serial.print("Thermistor resistance "); 
-  Serial.println(average);
+  // Serial.print("Thermistor resistance "); 
+  // Serial.println(average);
   
   float steinhart;
   steinhart = average / THERMISTORNOMINAL;     // (R/Ro)
@@ -65,5 +65,5 @@ void loop(void) {
   Serial.print(steinhart);
   Serial.println(" *C");
   
-  delay(1000);
+  delay(500); // For readability
 }
