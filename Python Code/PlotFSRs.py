@@ -9,6 +9,7 @@ from collections import deque
 def initialize_serial(port, baud_rate):
     """Initialize serial communication with Arduino."""
     ser = serial.Serial(port, baud_rate, timeout=1)
+    time.sleep(3) # Wait for the connection to establish
     return ser
 
 # Real-time data buffer
