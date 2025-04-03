@@ -50,7 +50,7 @@ def write_data(ser, csv_filename, num_channels=12):
 if __name__ == "__main__":
     serial_port = 'COM4'  # Change as needed
     baud_rate = 9600      # Match with Arduino
-    csv_filename = 'FSR_flat_2mm_s1_exp.csv'
+    csv_filename = '/Data/FSR_flat_2mm_s1_exp.csv'
 
     arduino_serial = initialize_serial(serial_port, baud_rate)
 
