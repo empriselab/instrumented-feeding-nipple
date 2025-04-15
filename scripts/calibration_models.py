@@ -271,6 +271,11 @@ def mlp(x_preprocessed, y_preprocessed):
     plt.grid(True)
     plt.tight_layout()
     plt.show()
+
+    torch.save(model.state_dict(), f"mlp_model_{filename}.pt")
+    np.savez(f"mlp_norm_{filename}.npz", x_mean=x_mean, x_std=x_std, y_mean=y_mean, y_std=y_std)
+
+
     
 def main():
     ft_data, fsr_data = load_baseline()
