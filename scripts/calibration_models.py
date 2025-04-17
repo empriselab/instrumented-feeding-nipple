@@ -15,9 +15,14 @@ import torch.nn as nn
 import torch.optim as optim
 
 
-filename = 'flat_iter_1'
+# NOTE: should match the filename variable in apply_fit.py
+filename = 'flat'
 
+# the suffix of which CSV files should be 'FT[_flat_single].csv' and 'FSR[_flat_single].csv'
 csv_names = '_flat'
+
+# alignment for peaks are 'none', 'first', 'last', and 'max'
+alignment_type = 'first'
 
 def load_csv(file_path):
     """Load CSV file into a DataFrame."""
@@ -57,6 +62,23 @@ def find_first_peak(time, signal):
     else:
         print("No local peak detected.")
         return None, None
+    
+def find_last_peak(time, signal):
+    """Find the last local peak and return its time and value."""
+    peaks, _ = find_peaks(signal, height=signal.median(), prominence=20)
+    
+    if len(peaks) > 0:
+        signal_np = np.asarray(signal)
+        time_np = np.asarray(time)
+        
+        first_peak_idx = peaks[-1]
+        first_peak_time = time_np[first_peak_idx]
+        first_peak_value = signal_np[first_peak_idx]
+        print(f"Last peak detected at time: {first_peak_time}, Value: {first_peak_value}")
+        return first_peak_time, first_peak_value
+    else:
+        print("No local peak detected.")
+        return None, None
 
 def preprocess_align(df1, df2, time_col, signal_col,  align_mode='max'):
     df1['data'] = abs(df1['data'])
@@ -85,23 +107,31 @@ def preprocess_align(df1, df2, time_col, signal_col,  align_mode='max'):
         peak_func = find_max_peak
     elif align_mode == 'first':
         peak_func = find_first_peak
+    elif align_mode == 'last':
+        peak_func = find_last_peak
+    elif align_mode == 'none':
+        print("Alignment mode set to 'none'. Skipping alignment.")
+        peak_func = None
     else:
         raise ValueError(f"Unknown align_mode: {align_mode}")
 
-    t1_peak, y1_peak = peak_func(df1[time_col], df1[signal_col])
-    t2_peak, y2_peak = peak_func(df2[time_col], df2[signal_col])
-    
-    if t1_peak is None or t2_peak is None:
-        print("Could not detect peaks in one or both signals.")
-        return df1, df2
-    
-    shift = t1_peak - t2_peak
-    df2[time_col] += shift
+    if peak_func:
+        t1_peak, y1_peak = peak_func(df1[time_col], df1[signal_col])
+        t2_peak, y2_peak = peak_func(df2[time_col], df2[signal_col])
+
+        if t1_peak is None or t2_peak is None:
+            print("Could not detect peaks in one or both signals.")
+            return df1, df2
+
+        shift = t1_peak - t2_peak
+        df2[time_col] += shift
     # factor = y2_peak / y1_peak
     # df1[signal_col] *= factor
     # factor = y1_peak / y2_peak  
     # df2[signal_col] *= factor 
 
+
+    # filters df2/fsr to include whose timestamps fall within the ft signal’s time range
     min_ft_time = df1[time_col].min()
     max_ft_time = df1[time_col].max()
     df2 = df2[(df2[time_col] >= min_ft_time) & (df2[time_col] <= max_ft_time)]
@@ -115,13 +145,14 @@ def preprocess_align(df1, df2, time_col, signal_col,  align_mode='max'):
     plt.legend()
     plt.title('Aligned Signals')
 
-    t1_new_peak, y1_new_peak = peak_func(df1[time_col], df1[signal_col])
-    t2_new_peak, y2_new_peak = peak_func(df2[time_col], df2[signal_col])
-    
-    if t1_new_peak is not None:
-        plt.plot(t1_new_peak, y1_new_peak, 'ro', label='FT First Peak')
-    if t2_new_peak is not None:
-        plt.plot(t2_new_peak, y2_new_peak, 'ro', label='FSR First Peak')
+    if peak_func:
+        t1_new_peak, y1_new_peak = peak_func(df1[time_col], df1[signal_col])
+        t2_new_peak, y2_new_peak = peak_func(df2[time_col], df2[signal_col])
+
+        if t1_new_peak is not None:
+            plt.plot(t1_new_peak, y1_new_peak, 'ro', label='FT First Peak')
+        if t2_new_peak is not None:
+            plt.plot(t2_new_peak, y2_new_peak, 'ro', label='FSR First Peak')
     
     plt.tight_layout()
     plt.show()
@@ -332,6 +363,7 @@ def mlp(x_preprocessed, y_preprocessed):
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
+    plt.savefig(filename + "_mlp_calibrated.png")
     plt.show()
 
     torch.save(model.state_dict(), f"mlp_model_{filename}.pt")
@@ -340,7 +372,7 @@ def mlp(x_preprocessed, y_preprocessed):
 
     
 def main():
-    ft_data, fsr_data = load_baseline(align_mode='first')
+    ft_data, fsr_data = load_baseline(align_mode=alignment_type)
 
     calibration_curve(ft_data, fsr_data)
 
