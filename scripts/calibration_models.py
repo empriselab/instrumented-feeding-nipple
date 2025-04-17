@@ -15,7 +15,9 @@ import torch.nn as nn
 import torch.optim as optim
 
 
-filename = 'vers_1'
+filename = 'flat_iter_1'
+
+csv_names = '_flat'
 
 def load_csv(file_path):
     """Load CSV file into a DataFrame."""
@@ -26,16 +28,37 @@ def find_max_peak(time, signal):
     peaks, _ = find_peaks(signal)
     
     if len(peaks) > 0:
-        max_peak_idx = peaks[signal[peaks].argmax()]
-        max_peak_time = time[max_peak_idx]
-        max_peak_value = signal[max_peak_idx]
+        signal_np = np.asarray(signal)
+        time_np = np.asarray(time)
+
+        max_peak_idx = peaks[signal_np[peaks].argmax()]
+        max_peak_time = time_np[max_peak_idx]
+        max_peak_value = signal_np[max_peak_idx]
         print(f"Max peak detected at time: {max_peak_time}, Value: {max_peak_value}")
         return max_peak_time, max_peak_value
     else:
         print("No peak detected.")
         return None, None
+    
 
-def preprocess_align(df1, df2, time_col, signal_col):
+def find_first_peak(time, signal):
+    """Find the first local peak and return its time and value."""
+    peaks, _ = find_peaks(signal, height=signal.median(), prominence=50)
+    
+    if len(peaks) > 0:
+        signal_np = np.asarray(signal)
+        time_np = np.asarray(time)
+        
+        first_peak_idx = peaks[0]
+        first_peak_time = time_np[first_peak_idx]
+        first_peak_value = signal_np[first_peak_idx]
+        print(f"First peak detected at time: {first_peak_time}, Value: {first_peak_value}")
+        return first_peak_time, first_peak_value
+    else:
+        print("No local peak detected.")
+        return None, None
+
+def preprocess_align(df1, df2, time_col, signal_col,  align_mode='max'):
     df1['data'] = abs(df1['data'])
     min_index = df2['data'].idxmin()
     min_time = df2['time'].iloc[min_index]
@@ -57,8 +80,16 @@ def preprocess_align(df1, df2, time_col, signal_col):
     plt.title('Original Signals')
     plt.show()
 
-    t1_peak, y1_peak = find_max_peak(df1[time_col], df1[signal_col])
-    t2_peak, y2_peak = find_max_peak(df2[time_col], df2[signal_col])
+
+    if align_mode == 'max':
+        peak_func = find_max_peak
+    elif align_mode == 'first':
+        peak_func = find_first_peak
+    else:
+        raise ValueError(f"Unknown align_mode: {align_mode}")
+
+    t1_peak, y1_peak = peak_func(df1[time_col], df1[signal_col])
+    t2_peak, y2_peak = peak_func(df2[time_col], df2[signal_col])
     
     if t1_peak is None or t2_peak is None:
         print("Could not detect peaks in one or both signals.")
@@ -84,8 +115,8 @@ def preprocess_align(df1, df2, time_col, signal_col):
     plt.legend()
     plt.title('Aligned Signals')
 
-    t1_new_peak, y1_new_peak = find_max_peak(df1[time_col], df1[signal_col])
-    t2_new_peak, y2_new_peak = find_max_peak(df2[time_col], df2[signal_col])
+    t1_new_peak, y1_new_peak = peak_func(df1[time_col], df1[signal_col])
+    t2_new_peak, y2_new_peak = peak_func(df2[time_col], df2[signal_col])
     
     if t1_new_peak is not None:
         plt.plot(t1_new_peak, y1_new_peak, 'ro', label='FT First Peak')
@@ -98,17 +129,48 @@ def preprocess_align(df1, df2, time_col, signal_col):
     return df1, df2
 
 
-def load_baseline():
+def convert_timestamps(ft_data, fsr_data):
+    """Convert one of the time columns to match the other based on mean time value."""
+    ft_max = ft_data['time'].max()
+    fsr_max = fsr_data['time'].max()
+
+    print(f"before conversion:")
+    print(f"FT time range: {ft_data['time'].min()} to {ft_data['time'].max()}")
+    print(f"FSR time range: {fsr_data['time'].min()} to {fsr_data['time'].max()}")
+
+    if fsr_max > 10 * ft_max:
+        print("Converting FSR time from microeconds to seconds.")
+        fsr_data['time'] = fsr_data['time'] / 1000000.0
+    elif ft_max > 10 * fsr_max:
+        print("Converting FT time from microseconds to seconds.")
+        ft_data['time'] = ft_data['time'] / 1000000.0
+    else:
+        print("No time conversion needed.")
+
+    print(f"After conversion:")
+    print(f"FT time range: {ft_data['time'].min()} to {ft_data['time'].max()}")
+    print(f"FSR time range: {fsr_data['time'].min()} to {fsr_data['time'].max()}")
+    
+    return ft_data, fsr_data
+
+
+def load_baseline(align_mode='max'):
     '''
     finalize and save the fully interpolated and aligned dfs
     '''
-    ft_data = load_csv('FT_test_data.csv')
-    fsr_data = load_csv('FSR_test_data.csv')
+    ft_data = load_csv('FT' + csv_names + '.csv')
+    fsr_data = load_csv('FSR' + csv_names + '.csv')
     fsr_data.rename(columns={'Timestamp': 'time'}, inplace=True)
-    fsr_data.rename(columns={'FSR 1 (mV)': 'data'}, inplace=True)
+    fsr_data.rename(columns={'FSR 1': 'data'}, inplace=True)
     ft_data.rename(columns={'ft_time': 'time'}, inplace=True)
+
+    ft_data, fsr_data = convert_timestamps(ft_data, fsr_data)
+
+    print(f"FT time range: {ft_data['time'].min()} to {ft_data['time'].max()}")
+    print(f"FSR time range: {fsr_data['time'].min()} to {fsr_data['time'].max()}")
+
     ft_data.rename(columns={'ft': 'data'}, inplace=True)
-    ft_data, fsr_data = preprocess_align(ft_data, fsr_data, 'time', 'data')
+    ft_data, fsr_data = preprocess_align(ft_data, fsr_data, 'time', 'data', align_mode=align_mode)
 
     ft_interp = np.interp(fsr_data['time'], ft_data['time'], ft_data['data'])
     fsr = fsr_data['data'] 
@@ -189,7 +251,7 @@ def calibration_curve(ft, fsr):
     })
     pd.set_option('display.max_rows', None) 
 
-    plt.savefig("diff_fit_models.png")
+    plt.savefig(filename + "_diff_fit_models.png")
     plt.tight_layout()
     plt.show()
 
@@ -278,7 +340,7 @@ def mlp(x_preprocessed, y_preprocessed):
 
     
 def main():
-    ft_data, fsr_data = load_baseline()
+    ft_data, fsr_data = load_baseline(align_mode='first')
 
     calibration_curve(ft_data, fsr_data)
 

@@ -8,7 +8,7 @@ import torch.nn as nn
 import torch
 
 
-filename = 'vers_1'
+filename = 'flat_iter_1'
 
 class TwoLayerNet(nn.Module):
     def __init__(self, input_size, hidden_size, output_size):
@@ -80,7 +80,7 @@ def plot_comparison(time_data, ft_data, mlp_estimates, poly3_estimates):
     plt.ylabel('Force (V)')
     plt.title('Ground truth FT and force estimates over time')
     plt.legend(loc='best')
-    plt.savefig("compare_time_force.png")
+    plt.savefig(filename + "_compare_time_force.png")
     plt.show()
 
 def evaluate_pol3(test_fsr_data, test_ft_data, model_p3):
@@ -100,7 +100,7 @@ def evaluate_pol3(test_fsr_data, test_ft_data, model_p3):
 
 
 def main():
-  filename = 'vers_1'
+  # filename = 'vers_2'
 
   model_filename = 'poly3_model_' + filename + '.pickle'
   model_p3 = load_model(model_filename)
