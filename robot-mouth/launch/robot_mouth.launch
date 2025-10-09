@@ -1,0 +1,16 @@
+<launch>
+    <!-- Arduino serial bridge -->
+    <node name="mouth_serial" pkg="robot_mouth" type="mouth_serial.py" output="screen" />
+
+    <!-- Robot Mouth Perception node -->
+    <node name="robot_mouth_perception" pkg="robot_mouth" type="robot_mouth_perception" output="screen" />
+
+    <!-- Chewing behavior simulation -->
+    <node name="simulate_chewing" pkg="robot_mouth" type="simulate_chewing.py" output="screen" />
+
+    <!-- Visualization node (Python marker publisher) -->
+    <node name="mouth_visualizer" pkg="robot_mouth" type="mouth_viz.py" output="screen" />
+
+    <!-- Visualization -->
+    <node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d $(find robot_mouth)/rviz/robot_mouth.rviz" />
+</launch>
